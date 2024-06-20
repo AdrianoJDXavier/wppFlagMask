@@ -98,41 +98,7 @@
         campo.css('padding-left', '3%')
       }
       const selectContainer = j('<div class="select-container-wpp-mask"></div>');
-      const countrySelect = j(`
-    <select class="country-select">
-    <option value="+55" data-mask="(00) 00000-0000" data-ddi="+55">🇧🇷<span>Brazil</span></option>
-    <option value="+1" data-mask="(000) 000-0000" data-ddi="+1">🇺🇸<b>USA</b></option>
-    <option value="+44" data-mask="0000 000 000" data-ddi="+44">🇬🇧<span>UK</span></option>
-    <option value="+61" data-mask="0000 000 000" data-ddi="+61">🇦🇺<span>Australia</span></option>
-    <option value="+33" data-mask="00 00 00 00 00" data-ddi="+33">🇫🇷<span>France</span></option>
-    <option value="+49" data-mask="000 00000000" data-ddi="+49">🇩🇪<span>Germany</span></option>
-    <option value="+81" data-mask="00-0000-0000" data-ddi="+81">🇯🇵<span>Japan</span></option>
-    <option value="+39" data-mask="000 000 0000" data-ddi="+39">🇮🇹<span>Italy</span></option>
-    <option value="+34" data-mask="000 000 000" data-ddi="+34">🇪🇸<span>Spain</span></option>
-    <option value="+86" data-mask="000 0000 0000" data-ddi="+86">🇨🇳<span>China</span></option>
-    <option value="+91" data-mask="00000 00000" data-ddi="+91">🇮🇳<span>India</span></option>
-    <option value="+7" data-mask="000 000-00-00" data-ddi="+7">🇷🇺<span>Russia</span></option>
-    <option value="+62" data-mask="0000-0000-0000" data-ddi="+62">🇮🇩<span>Indonesia</span></option>
-    <option value="+92" data-mask="0000-0000000" data-ddi="+92">🇵🇰<span>Pakistan</span></option>
-    <option value="+63" data-mask="0000 000 0000" data-ddi="+63">🇵🇭<span>Philippines</span></option>
-    <option value="+90" data-mask="000 000 0000" data-ddi="+90">🇹🇷<span>Turkey</span></option>
-    <option value="+82" data-mask="00-000-0000" data-ddi="+82">🇰🇷<span>South Korea</span></option>
-    <option value="+31" data-mask="00 000 0000" data-ddi="+31">🇳🇱<span>Netherlands</span></option>
-    <option value="+27" data-mask="000 000 0000" data-ddi="+27">🇿🇦<span>South Africa</span></option>
-    <option value="+46" data-mask="00-000 00 00" data-ddi="+46">🇸🇪<span>Sweden</span></option>
-    <option value="+47" data-mask="000 00 000" data-ddi="+47">🇳🇴<span>Norway</span></option>
-    <option value="+48" data-mask="000 000 000" data-ddi="+48">🇵🇱<span>Poland</span></option>
-    <option value="+51" data-mask="000 000 000" data-ddi="+51">🇵🇪<span>Peru</span></option>
-    <option value="+52" data-mask="00 0000 0000" data-ddi="+52">🇲🇽<span>Mexico</span></option>
-    <option value="+54" data-mask="00 0000-0000" data-ddi="+54">🇦🇷<span>Argentina</span></option>
-    <option value="+56" data-mask="0 0000 0000" data-ddi="+56">🇨🇱<span>Chile</span></option>
-    <option value="+58" data-mask="000-0000000" data-ddi="+58">🇻🇪<span>Venezuela</span></option>
-    <option value="+60" data-mask="0-000 0000" data-ddi="+60">🇲🇾<span>Malaysia</span></option>
-    <option value="+65" data-mask="0000 0000" data-ddi="+65">🇸🇬<span>Singapore</span></option>
-    <option value="+66" data-mask="00 000 0000" data-ddi="+66">🇹🇭<span>Thailand</span></option>
-    <option value="+20" data-mask="0 000 000 000" data-ddi="+20">🇪🇬<span>Egypt</span></option>
-</select>
-  `);
+      const countrySelect = createCountrySelect();
 
       selectContainer.append(countrySelect);
       campo.wrap('<div class="phone-mask-container-wpp-mask"></div>');
@@ -205,6 +171,240 @@
 
       function displayOnlyEmoji(text) {
         return text.replace(/[^\p{Emoji_Presentation}]/gu, '')
+      }
+
+      function createCountrySelect() {
+        // Array de objetos com dados dos países
+        const countries = [{
+            value: "+55",
+            mask: "(00) 00000-0000",
+            ddi: "+55",
+            flag: "🇧🇷",
+            name: "Brazil"
+          },
+          {
+            value: "+1",
+            mask: "(000) 000-0000",
+            ddi: "+1",
+            flag: "🇺🇸",
+            name: "USA"
+          },
+          {
+            value: "+44",
+            mask: "0000 000 000",
+            ddi: "+44",
+            flag: "🇬🇧",
+            name: "UK"
+          },
+          {
+            value: "+61",
+            mask: "0000 000 000",
+            ddi: "+61",
+            flag: "🇦🇺",
+            name: "Australia"
+          },
+          {
+            value: "+33",
+            mask: "00 00 00 00 00",
+            ddi: "+33",
+            flag: "🇫🇷",
+            name: "France"
+          },
+          {
+            value: "+49",
+            mask: "000 00000000",
+            ddi: "+49",
+            flag: "🇩🇪",
+            name: "Germany"
+          },
+          {
+            value: "+81",
+            mask: "00-0000-0000",
+            ddi: "+81",
+            flag: "🇯🇵",
+            name: "Japan"
+          },
+          {
+            value: "+39",
+            mask: "000 000 0000",
+            ddi: "+39",
+            flag: "🇮🇹",
+            name: "Italy"
+          },
+          {
+            value: "+34",
+            mask: "000 000 000",
+            ddi: "+34",
+            flag: "🇪🇸",
+            name: "Spain"
+          },
+          {
+            value: "+86",
+            mask: "000 0000 0000",
+            ddi: "+86",
+            flag: "🇨🇳",
+            name: "China"
+          },
+          {
+            value: "+91",
+            mask: "00000 00000",
+            ddi: "+91",
+            flag: "🇮🇳",
+            name: "India"
+          },
+          {
+            value: "+7",
+            mask: "000 000-00-00",
+            ddi: "+7",
+            flag: "🇷🇺",
+            name: "Russia"
+          },
+          {
+            value: "+62",
+            mask: "0000-0000-0000",
+            ddi: "+62",
+            flag: "🇮🇩",
+            name: "Indonesia"
+          },
+          {
+            value: "+92",
+            mask: "0000-0000000",
+            ddi: "+92",
+            flag: "🇵🇰",
+            name: "Pakistan"
+          },
+          {
+            value: "+63",
+            mask: "0000 000 0000",
+            ddi: "+63",
+            flag: "🇵🇭",
+            name: "Philippines"
+          },
+          {
+            value: "+90",
+            mask: "000 000 0000",
+            ddi: "+90",
+            flag: "🇹🇷",
+            name: "Turkey"
+          },
+          {
+            value: "+82",
+            mask: "00-000-0000",
+            ddi: "+82",
+            flag: "🇰🇷",
+            name: "South Korea"
+          },
+          {
+            value: "+31",
+            mask: "00 000 0000",
+            ddi: "+31",
+            flag: "🇳🇱",
+            name: "Netherlands"
+          },
+          {
+            value: "+27",
+            mask: "000 000 0000",
+            ddi: "+27",
+            flag: "🇿🇦",
+            name: "South Africa"
+          },
+          {
+            value: "+46",
+            mask: "00-000 00 00",
+            ddi: "+46",
+            flag: "🇸🇪",
+            name: "Sweden"
+          },
+          {
+            value: "+47",
+            mask: "000 00 000",
+            ddi: "+47",
+            flag: "🇳🇴",
+            name: "Norway"
+          },
+          {
+            value: "+48",
+            mask: "000 000 000",
+            ddi: "+48",
+            flag: "🇵🇱",
+            name: "Poland"
+          },
+          {
+            value: "+51",
+            mask: "000 000 000",
+            ddi: "+51",
+            flag: "🇵🇪",
+            name: "Peru"
+          },
+          {
+            value: "+52",
+            mask: "00 0000 0000",
+            ddi: "+52",
+            flag: "🇲🇽",
+            name: "Mexico"
+          },
+          {
+            value: "+54",
+            mask: "00 0000-0000",
+            ddi: "+54",
+            flag: "🇦🇷",
+            name: "Argentina"
+          },
+          {
+            value: "+56",
+            mask: "0 0000 0000",
+            ddi: "+56",
+            flag: "🇨🇱",
+            name: "Chile"
+          },
+          {
+            value: "+58",
+            mask: "000-0000000",
+            ddi: "+58",
+            flag: "🇻🇪",
+            name: "Venezuela"
+          },
+          {
+            value: "+60",
+            mask: "0-000 0000",
+            ddi: "+60",
+            flag: "🇲🇾",
+            name: "Malaysia"
+          },
+          {
+            value: "+65",
+            mask: "0000 0000",
+            ddi: "+65",
+            flag: "🇸🇬",
+            name: "Singapore"
+          },
+          {
+            value: "+66",
+            mask: "00 000 0000",
+            ddi: "+66",
+            flag: "🇹🇭",
+            name: "Thailand"
+          },
+          {
+            value: "+20",
+            mask: "0 000 000 000",
+            ddi: "+20",
+            flag: "🇪🇬",
+            name: "Egypt"
+          }
+        ];
+
+        // Crie o elemento select
+        const select = j('<select class="country-select"></select>');
+
+        // Adicione cada opção ao select
+        countries.forEach(country => {
+          const option = j(`<option value="${country.value}" data-mask="${country.mask}" data-ddi="${country.ddi}">${country.flag} <span>${country.name}</span></option>`);
+            option.html(option.html().split(' ')[0] + ' <span>' + country.name + '</span>');
+          select.append(option);
+        });
+
+        return select;
       }
     }
   </script>
