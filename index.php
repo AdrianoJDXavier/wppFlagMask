@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
   <style>
     .phone-mask-container-wpp-mask {
       display: flex;
@@ -18,7 +19,7 @@
     }
 
     .rp_mask-wpp {
-      padding: 10px 10px 10px 60px;
+      padding: 10px 10px 10px 3%;
 
     }
 
@@ -98,39 +99,39 @@
       }
       const selectContainer = j('<div class="select-container-wpp-mask"></div>');
       const countrySelect = j(`
-    <select>
-      <option value="+55" data-mask="(00) 00000-0000" data-ddi="+55">🇧🇷</option>
-      <option value="+1" data-mask="(000) 000-0000" data-ddi="+1">🇺🇸</option>
-      <option value="+44" data-mask="0000 000 000" data-ddi="+44">🇬🇧</option>
-      <option value="+61" data-mask="0000 000 000" data-ddi="+61">🇦🇺</option>
-      <option value="+33" data-mask="00 00 00 00 00" data-ddi="+33">🇫🇷</option>
-      <option value="+49" data-mask="000 00000000" data-ddi="+49">🇩🇪</option>
-      <option value="+81" data-mask="00-0000-0000" data-ddi="+81">🇯🇵</option>
-      <option value="+39" data-mask="000 000 0000" data-ddi="+39">🇮🇹</option>
-      <option value="+34" data-mask="000 000 000" data-ddi="+34">🇪🇸</option>
-      <option value="+86" data-mask="000 0000 0000" data-ddi="+86">🇨🇳</option>
-      <option value="+91" data-mask="00000 00000" data-ddi="+91">🇮🇳</option>
-      <option value="+7" data-mask="000 000-00-00" data-ddi="+7">🇷🇺</option>
-      <option value="+62" data-mask="0000-0000-0000" data-ddi="+62">🇮🇩</option>
-      <option value="+92" data-mask="0000-0000000" data-ddi="+92">🇵🇰</option>
-      <option value="+63" data-mask="0000 000 0000" data-ddi="+63">🇵🇭</option>
-      <option value="+90" data-mask="000 000 0000" data-ddi="+90">🇹🇷</option>
-      <option value="+82" data-mask="00-000-0000" data-ddi="+82">🇰🇷</option>
-      <option value="+31" data-mask="00 000 0000" data-ddi="+31">🇳🇱</option>
-      <option value="+27" data-mask="000 000 0000" data-ddi="+27">🇿🇦</option>
-      <option value="+46" data-mask="00-000 00 00" data-ddi="+46">🇸🇪</option>
-      <option value="+47" data-mask="000 00 000" data-ddi="+47">🇳🇴</option>
-      <option value="+48" data-mask="000 000 000" data-ddi="+48">🇵🇱</option>
-      <option value="+51" data-mask="000 000 000" data-ddi="+51">🇵🇪</option>
-      <option value="+52" data-mask="00 0000 0000" data-ddi="+52">🇲🇽</option>
-      <option value="+54" data-mask="00 0000-0000" data-ddi="+54">🇦🇷</option>
-      <option value="+56" data-mask="0 0000 0000" data-ddi="+56">🇨🇱</option>
-      <option value="+58" data-mask="000-0000000" data-ddi="+58">🇻🇪</option>
-      <option value="+60" data-mask="0-000 0000" data-ddi="+60">🇲🇾</option>
-      <option value="+65" data-mask="0000 0000" data-ddi="+65">🇸🇬</option>
-      <option value="+66" data-mask="00 000 0000" data-ddi="+66">🇹🇭</option>
-      <option value="+20" data-mask="0 000 000 000" data-ddi="+20">🇪🇬</option>
-    </select>
+    <select class="country-select">
+    <option value="+55" data-mask="(00) 00000-0000" data-ddi="+55">🇧🇷<span>Brazil</span></option>
+    <option value="+1" data-mask="(000) 000-0000" data-ddi="+1">🇺🇸<b>USA</b></option>
+    <option value="+44" data-mask="0000 000 000" data-ddi="+44">🇬🇧<span>UK</span></option>
+    <option value="+61" data-mask="0000 000 000" data-ddi="+61">🇦🇺<span>Australia</span></option>
+    <option value="+33" data-mask="00 00 00 00 00" data-ddi="+33">🇫🇷<span>France</span></option>
+    <option value="+49" data-mask="000 00000000" data-ddi="+49">🇩🇪<span>Germany</span></option>
+    <option value="+81" data-mask="00-0000-0000" data-ddi="+81">🇯🇵<span>Japan</span></option>
+    <option value="+39" data-mask="000 000 0000" data-ddi="+39">🇮🇹<span>Italy</span></option>
+    <option value="+34" data-mask="000 000 000" data-ddi="+34">🇪🇸<span>Spain</span></option>
+    <option value="+86" data-mask="000 0000 0000" data-ddi="+86">🇨🇳<span>China</span></option>
+    <option value="+91" data-mask="00000 00000" data-ddi="+91">🇮🇳<span>India</span></option>
+    <option value="+7" data-mask="000 000-00-00" data-ddi="+7">🇷🇺<span>Russia</span></option>
+    <option value="+62" data-mask="0000-0000-0000" data-ddi="+62">🇮🇩<span>Indonesia</span></option>
+    <option value="+92" data-mask="0000-0000000" data-ddi="+92">🇵🇰<span>Pakistan</span></option>
+    <option value="+63" data-mask="0000 000 0000" data-ddi="+63">🇵🇭<span>Philippines</span></option>
+    <option value="+90" data-mask="000 000 0000" data-ddi="+90">🇹🇷<span>Turkey</span></option>
+    <option value="+82" data-mask="00-000-0000" data-ddi="+82">🇰🇷<span>South Korea</span></option>
+    <option value="+31" data-mask="00 000 0000" data-ddi="+31">🇳🇱<span>Netherlands</span></option>
+    <option value="+27" data-mask="000 000 0000" data-ddi="+27">🇿🇦<span>South Africa</span></option>
+    <option value="+46" data-mask="00-000 00 00" data-ddi="+46">🇸🇪<span>Sweden</span></option>
+    <option value="+47" data-mask="000 00 000" data-ddi="+47">🇳🇴<span>Norway</span></option>
+    <option value="+48" data-mask="000 000 000" data-ddi="+48">🇵🇱<span>Poland</span></option>
+    <option value="+51" data-mask="000 000 000" data-ddi="+51">🇵🇪<span>Peru</span></option>
+    <option value="+52" data-mask="00 0000 0000" data-ddi="+52">🇲🇽<span>Mexico</span></option>
+    <option value="+54" data-mask="00 0000-0000" data-ddi="+54">🇦🇷<span>Argentina</span></option>
+    <option value="+56" data-mask="0 0000 0000" data-ddi="+56">🇨🇱<span>Chile</span></option>
+    <option value="+58" data-mask="000-0000000" data-ddi="+58">🇻🇪<span>Venezuela</span></option>
+    <option value="+60" data-mask="0-000 0000" data-ddi="+60">🇲🇾<span>Malaysia</span></option>
+    <option value="+65" data-mask="0000 0000" data-ddi="+65">🇸🇬<span>Singapore</span></option>
+    <option value="+66" data-mask="00 000 0000" data-ddi="+66">🇹🇭<span>Thailand</span></option>
+    <option value="+20" data-mask="0 000 000 000" data-ddi="+20">🇪🇬<span>Egypt</span></option>
+</select>
   `);
 
       selectContainer.append(countrySelect);
@@ -141,9 +142,11 @@
         campo.trigger('focus');
       }, 100);
       campo.on('focus', function() {
-        console.log(campo.val())
         const value = campo.val();
         let ddiFound = false;
+
+        const fistOption = countrySelect.find('option')[0];
+        fistOption.text = displayOnlyEmoji(fistOption.text)
 
 
         for (let i = 1; i <= 3; i++) {
@@ -172,11 +175,11 @@
       });
 
       countrySelect.on('change', function() {
-
         const selectedOption = countrySelect.find('option:selected');
         const ddi = selectedOption.attr('data-ddi');
-
         const mask = selectedOption.attr('data-mask');
+        console.log(selectedOption.html())
+        selectedOption.text(displayOnlyEmoji(selectedOption.text()))
         aplicarMascaraComDDI(ddi, mask);
         campo.val('');
         isDDIPrefixed = false;
@@ -187,7 +190,6 @@
         const ddi = selectedOption.attr('data-ddi');
         var cursorPos = campo.get(0).selectionStart + ddi.length + 2;
         const mask = selectedOption.attr('data-mask');
-
         aplicarMascaraComDDI(ddi, mask);
 
         // Reposicionar o cursor
@@ -199,6 +201,10 @@
       function aplicarMascaraComDDI(ddi, mask) {
         campo.unmask();
         campo.mask(ddi + ' ' + mask);
+      }
+
+      function displayOnlyEmoji(text) {
+        return text.replace(/[^\p{Emoji_Presentation}]/gu, '')
       }
     }
   </script>
